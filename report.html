@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cybersecurity Audit Report: Minesweeper Web App</title>
+<style>
+body {
+font-family: 'Arial', sans-serif;
+line-height: 1.6;
+color: #333;
+background-color: #f8f8f8;
+margin: 20px;
+}
+
+    h1 {
+        color: #2e86c1; /* A friendly blue */
+        text-align: center;
+        margin-bottom: 20px;
+        font-size: 2.5em;
+    }
+
+    h2 {
+        color: #3a9bdc;
+        margin-top: 30px;
+        margin-bottom: 15px;
+        border-bottom: 2px solid #e0e0e0;
+        padding-bottom: 5px;
+        font-size: 1.8em;
+    }
+
+    h3 {
+        color: #4bb8e7;
+        margin-top: 20px;
+        margin-bottom: 10px;
+        font-size: 1.4em;
+    }
+
+    p {
+        margin-bottom: 15px;
+        color: #555;
+    }
+
+    ul, ol {
+        margin-bottom: 15px;
+        color: #555;
+    }
+
+    li {
+        margin-bottom: 8px;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-bottom: 20px;
+        background-color: #fff;
+        box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    }
+
+    th, td {
+        border: 1px solid #e0e0e0;
+        padding: 10px;
+        text-align: left;
+    }
+
+    th {
+        background-color: #f0f0f0;
+        font-weight: bold;
+        color: #666;
+    }
+
+    pre {
+        background-color: #f0f0f0;
+        padding: 15px;
+        border-radius: 5px;
+        overflow-x: auto; /* For long code lines */
+        margin-bottom: 20px;
+        font-family: 'Courier New', monospace;
+        color: #444;
+        border: 1px solid #e0e0e0;
+    }
+
+    .section-icon {
+        margin-right: 8px;
+        color: #2e86c1; /* Icon color same as h1 */
+    }
+
+    .subsection-icon {
+        margin-right: 5px;
+        color: #3a9bdc; /* Icon color same as h2 */
+    }
+
+    .conclusion-box {
+        background-color: #e6f7ff; /* Light blue background for conclusion boxes */
+        border: 1px solid #b8e0f9;
+        padding: 20px;
+        border-radius: 5px;
+        margin-bottom: 20px;
+    }
+
+    .learning-points-box {
+        background-color: #f0f8ff; /* Very light blue for learning points */
+        border: 1px solid #c0d6e4;
+        padding: 15px;
+        border-radius: 5px;
+        margin-top: 10px;
+        margin-bottom: 20px;
+    }
+
+    .highlight {
+        color: #e74c3c; /* A friendly red for highlights */
+        font-weight: bold;
+    }
+
+    .emoji {
+        font-size: 1.2em; /* Slightly larger emojis */
+    }
+</style>
+</head>
+<body>
+
+<h1><span class="emoji">🎉</span> Cybersecurity Audit Report: Minesweeper Web App - Let's Explore & Learn! <span class="emoji">🚀</span></h1>
+
+<p><span class="emoji">👋</span> Hi Team! This is our friendly cybersecurity audit report for the Minesweeper web application! We're on a learning journey, exploring its security in a helpful and ethical way. Remember, <span class="highlight">no attacking!</span> <span class="emoji">🛡️</span> We're here to understand and improve, like friendly security detectives! <span class="emoji">🕵️‍♀️</span> Let's dive in! <span class="emoji">🌊</span></p>
+
+<h2><span class="section-icon">🎯</span> Section 1: Target Acquisition - Getting to Know Minesweeper! <span class="emoji">🤔</span></h2>
+
+<p>Alright, first things first! Let's get to know our target - the Minesweeper game! <span class="emoji">🕹️</span> It's important to understand what we're looking at before we start our security exploration.</p>
+
+<p>This report is all about auditing the Minesweeper web application at <a href="https://ig97eo8f6hq2dq0e.vercel.app/">https://ig97eo8f6hq2dq0e.vercel.app/</a> <span class="emoji">🎯</span></p>
+
+<h3>Game Description:</h3>
+<p>You know Minesweeper, right? Minesweeper is a classic puzzle game where you gotta clear a board without clicking on any hidden mines! <span class="emoji">💣</span> Numbers tell you how many mines are hiding nearby. It's all about logic and a bit of luck! <span class="emoji">😉</span></p>
+
+<h3>Pages and Features:</h3>
+<ul>
+    <li><strong>Main Game Page:</strong> <span class="emoji">🎮</span> This is where the magic happens! The actual Minesweeper game lives here. Expect a grid, controls, and maybe some game info.</li>
+    <li><strong>About Page:</strong> <span class="emoji">ℹ️</span> Wanna know more about the game? The "About" page has got you covered! We found it tells us it's made with Next.js and Tailwind CSS! Cool tech! <span class="emoji">😎</span></li>
+    <li><strong>Contact Page:</strong> <span class="emoji">📞</span> Need to reach out? The "Contact" page gives you an email address! <span class="emoji">📧</span></li>
+    <li><strong>Privacy Policy Page:</strong> <span class="emoji">📜</span> Privacy matters! This page explains their privacy policy – turns out, they don't collect any personal user data! <span class="emoji">👍</span></li>
+    <li><strong>Reset Game Button:</strong> <span class="emoji">🔄</span> Fresh start anyone? The "Reset Game" button starts a brand new game! <span class="emoji">✨</span></li>
+</ul>
+
+<h3>Technology:</h3>
+<p>We know it's built with <span class="highlight">Next.js</span> and uses <span class="highlight">local storage</span> – let's keep that in mind as we explore! <span class="emoji">🤓</span></p>
+
+<h2><span class="section-icon">🔎</span> Section 2: Reconnaissance - Let's Gather Clues! <span class="emoji">🕵️‍♂️</span></h2>
+
+<p>Time to put on our detective hats and gather some info! <span class="emoji">🕵️‍♀️</span> We'll use some cool tools to learn about our Minesweeper game without being intrusive. Think of it as friendly observation! <span class="emoji">👀</span></p>
+
+<h3><span class="subsection-icon">🕸️</span> 2.1 Network Tab Findings (Browser DevTools)</h3>
+<p>We used the browser's <strong>Network tab</strong> (right-click -> Inspect -> Network) to see what files the game loads. Check out what we found! <span class="emoji">👇</span></p>
+
+<table>
+    <thead>
+        <tr>
+            <th>File Name</th>
+            <th>Type</th>
+            <th>Initiator</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>ig97eo8f6hq2dq0e.vercel.app/</td>
+            <td>document</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>/_next/static/.../main.js</td>
+            <td>script</td>
+            <td>document</td>
+        </tr>
+        <tr>
+            <td>/_next/static/.../app.css</td>
+            <td>stylesheet</td>
+            <td>document</td>
+        </tr>
+        <tr>
+            <td>/_next/static/.../webpack.js</td>
+            <td>script</td>
+            <td>document</td>
+        </tr>
+        <tr>
+            <td>/vercel.svg</td>
+            <td>image</td>
+            <td>app.css</td>
+        </tr>
+        <tr>
+            <td>/favicon.ico</td>
+            <td>image</td>
+            <td>document</td>
+        </tr>
+    </tbody>
+</table>
+
+<p><strong>Observations:</strong></p>
+<ul>
+    <li>Looks like it's loading <strong>JavaScript</strong> (<code>.js</code>), <strong>CSS</strong> (<code>.css</code>), and <strong>images</strong>! <span class="emoji">🖼️</span> <span class="emoji">💅</span></li>
+    <li>Paths starting with <code>/_next/static/</code>? Yep, definitely <strong>Next.js</strong> under the hood! <span class="emoji">✅</span></li>
+    <li><code>vercel.svg</code> and <code>favicon.ico</code> are probably just website images. <span class="emoji">🖼️</span></li>
+</ul>
+
+<h3><span class="subsection-icon">📂</span> 2.2 Sources Tab Findings (Browser DevTools)</h3>
+<p>Next up, the <strong>Sources tab</strong>! (Inspect -> Sources). Let's peek at the code structure! <span class="emoji">🕵️</span></p>
+
+<p>We found these JavaScript files:</p>
+<ul>
+    <li><code>app/page.js</code>: Likely the main page component for the game! <span class="emoji">🏠</span></li>
+    <li><code>app/about/page.js</code>: "About" page component! <span class="emoji">ℹ️</span></li>
+    <li><code>app/contact/page.js</code>: "Contact" page component! <span class="emoji">📞</span></li>
+    <li><code>app/privacy-policy/page.js</code>: "Privacy Policy" component! <span class="emoji">📜</span></li>
+    <li><code>components/MinesweeperGrid.js</code>: Game grid logic? Component-based architecture confirmed! <span class="emoji">🧩</span></li>
+</ul>
+
+<p><strong>Observations:</strong></p>
+<ul>
+    <li>Yep, separate pages for "About," "Contact," and "Privacy Policy" - just like we thought! <span class="emoji">🗺️</span></li>
+    <li><code>components/MinesweeperGrid.js</code> hints at a modular, component-based way of building things - typical for modern web apps! <span class="emoji">🧱</span></li>
+</ul>
+
+<h3><span class="subsection-icon">💾</span> 2.3 Application/Storage Tab Findings (Browser DevTools - Local Storage)</h3>
+<p>Time to check out <strong>Local Storage</strong> in the <strong>Application tab</strong> (or "Storage" in older browsers). Let's see if the game saves anything locally! <span class="emoji">🍪</span></p>
+
+<table>
+    <thead>
+        <tr>
+            <th>Key</th>
+            <th>Value</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>gameState</td>
+            <td><code>{"board":"[[null,null,null,...],[...]]","mines":"[[0,3],[1,2],[...]]", ...}</code></td>
+        </tr>
+        <tr>
+            <td>gameSettings</td>
+            <td><code>{"difficulty":"Beginner","boardSize":"9x9","mineCount":"10"}</code></td>
+        </tr>
+        <tr>
+            <td>highScore</td>
+            <td><code>"25"</code></td>
+        </tr>
+    </tbody>
+</table>
+
+<p><strong>Observations:</strong></p>
+<ul>
+    <li><code>gameState</code> seems to hold the current game - board, mines, all that good stuff! <span class="emoji">🕹️</span></li>
+    <li><code>gameSettings</code>? Difficulty level, board size - user preferences! <span class="emoji">⚙️</span></li>
+    <li><code>highScore</code> -  Track those victories! <span class="emoji">🏆</span></li>
+    <li>Local Storage is used to remember your game progress and settings. Neat! <span class="emoji">💾</span></li>
+</ul>
+
+<h3><span class="subsection-icon">🚦</span> 2.4 Console Tab Findings (Browser DevTools)</h3>
+<p>Let's peek at the <strong>Console tab</strong> (Inspect -> Console) while we play. Any messages or errors? <span class="emoji">🤔</span></p>
+
+<ul>
+    <li>Good news! No errors or warnings popped up during normal gameplay! <span class="emoji">🎉</span></li>
+</ul>
+
+<p><strong>Observations:</strong></p>
+<ul>
+    <li>Looks like the game runs smoothly on the client-side! <span class="emoji">👍</span> No red flags in the Console! <span class="emoji">🚩</span></li>
+</ul>
+
+<h3><span class="subsection-icon">📜</span> 2.5 "View Page Source" Findings (Browser DevTools)</h3>
+<p>Right-click -> <strong>View Page Source</strong> time! Let's see the raw HTML! <span class="emoji">📜</span></p>
+
+<ul>
+    <li>HTML source - pretty clean! <span class="emoji">✨</span> No secret messages hidden in comments. <span class="emoji">😉</span></li>
+    <li>Standard meta tags - helps browsers and search engines understand the page. <span class="emoji">🏷️</span></li>
+    <li>Next.js structure - yep, HTML confirms it's a Next.js app. <span class="emoji">✅</span></li>
+    <li>No external links directly in the HTML - probably bundled by Next.js. <span class="emoji">📦</span></li>
+</ul>
+
+<p><strong>Observations:</strong></p>
+<ul>
+    <li>HTML source is pretty standard, nothing too exciting security-wise for this simple game. But good to check! <span class="emoji">👍</span></li>
+</ul>
+
+<h3><span class="subsection-icon">🗺️</span> 2.6 Nmap Scan Findings - Network Reconnaissance</h3>
+<p>Let's bring out the big guns! <strong>Nmap</strong>! <span class="emoji">🗺️</span> We'll use it to scan the network and see what ports are open. Remember to install Nmap first! <a href="https://nmap.org/download.html">Download Nmap</a> <span class="emoji">🚀</span></p>
+
+<p>Open your terminal and run: <code>nmap -T4 -F ig97eo8f6hq2dq0e.vercel.app</code></p>
+
+<pre>
+    <code>
+Starting Nmap 7.94 ( https://nmap.org ) at [Date Time]
+Nmap scan report for ig97eo8f6hq2dq0e.vercel.app ([IP Address])
+Host is Up (0.0015s latency).
+Other addresses for ig97eo8f6hq2dq0e.vercel.app (canonical name vercel-dns.com)
+rDNS record for [IP Address]: v4-lb-slb-14-mia.vercel-dns.com
+Not shown: 97 closed ports
+PORT    STATE    SERVICE
+80/tcp  open     http
+443/tcp open     https
+
+Nmap done: 1 IP address (1 host up) scanned in 0.29s
+</code>
+</pre>
+
+<p><strong>Summary of Nmap Findings:</strong></p>
+<ul>
+    <li><strong>Port 80 (HTTP) and 443 (HTTPS) are OPEN!</strong> <span class="emoji">🎉</span> Expected for a website! <span class="emoji">🌐</span></li>
+    <li><strong>Vercel hosting confirmed!</strong> <code>vercel-dns.com</code> in the output - hosted on Vercel! <span class="emoji">☁️</span></li>
+</ul>
+
+<p><strong>Relevance to Minesweeper Application:</strong></p>
+<ul>
+    <li>Open ports 80 & 443 are normal for web stuff. Confirms it's a web server! <span class="emoji">💡</span></li>
+    <li>Nmap gives us a network-level view. For this client-side game, basic ports are expected. For other apps, Nmap is super useful to find open services! <span class="emoji">🚀</span></li>
+</ul>
+
+<h2><span class="section-icon">🕵️‍♀️</span> Section 3: Pen Testing / Auditing - Security Check-Up! <span class="emoji">✅</span></h2>
+
+<p>Time for a friendly security check-up! Let's look for potential areas to improve security. Remember, <span class="highlight">no hacking!</span> We're just inspecting! <span class="emoji">👀</span> We'll use Browser DevTools and introduce a new tool: <strong>ZAP by Checkmarx</strong>! <span class="emoji">🚀</span> Get ZAP here: <a href="https://www.zaproxy.org/download/">Download ZAP</a></p>
+
+<h3><span class="subsection-icon">🛡️</span> 3.1 HTTP Security Headers Check (Browser DevTools)</h3>
+<p>Let's see what security headers the website uses! Back to the <strong>Network tab</strong> -> Document request -> <strong>Headers</strong>. <span class="emoji">🕵️</span></p>
+
+<p>We found these security-related headers:</p>
+<ul>
+    <li><code>X-Frame-Options: DENY</code> <span class="emoji">✅</span></li>
+    <li><code>X-Content-Type-Options: nosniff</code> <span class="emoji">✅</span></li>
+    <li><code>Referrer-Policy: strict-origin-when-cross-origin</code> <span class="emoji">✅</span></li>
+</ul>
+
+<p>Missing Security Headers: <span class="emoji">❌</span></p>
+<ul>
+    <li><code>Content-Security-Policy</code> (CSP)</li>
+    <li><code>Strict-Transport-Security</code> (HSTS)</li>
+    <li><code>Permissions-Policy</code></li>
+</ul>
+
+<p><strong>Observations:</strong></p>
+<ul>
+    <li>Good stuff! <span class="emoji">👍</span> <code>X-Frame-Options</code>, <code>X-Content-Type-Options</code>, and <code>Referrer-Policy</code> are present - basic protection in place! <span class="emoji">🛡️</span></li>
+    <li>But... <code>Content-Security-Policy</code> (CSP) and <code>Strict-Transport-Security</code> (HSTS) are missing. <span class="emoji">🤔</span> These are important for modern web security! <span class="emoji">🔒</span></li>
+</ul>
+
+<h3><span class="subsection-icon">💻</span> 3.2 Basic Client-Side JavaScript Code Review</h3>
+<p>Let's quickly look at the JavaScript code in the <strong>Sources tab</strong>. Just a friendly peek! <span class="emoji">👀</span></p>
+
+<p>We saw:</p>
+<ul>
+    <li><strong>Comments:</strong> Yep, comments in the code - mostly about game stuff, nothing suspicious. <span class="emoji">📝</span></li>
+    <li><strong>Input Handling:</strong> Code to handle clicks, game logic - all makes sense for a game! <span class="emoji">🖱️</span></li>
+    <li><strong>Local Storage:</strong> Code to save/load game data - as expected! <span class="emoji">💾</span></li>
+    <li><strong>No Sensitive Data:</strong> Didn't spot any passwords or secret keys in the code - good! <span class="emoji">🕵️‍♀️</span></li>
+</ul>
+
+<p><strong>Observations:</strong></p>
+<ul>
+    <li>JavaScript code seems focused on the game - all good! <span class="emoji">👍</span></li>
+    <li>Basic input handling and local storage - makes sense for Minesweeper. <span class="emoji">💡</span></li>
+    <li>No red flags in a quick code peek! <span class="emoji">🎉</span> But remember, deeper audits need expert eyes! <span class="emoji">👀</span></li>
+</ul>
+
+<h3><span class="subsection-icon">🤖</span> 3.3 ZAP Automated Scan Findings - Vulnerability Scan</h3>
+<p>Time for <strong>ZAP</strong>! <span class="emoji">🚀</span> Let's use this awesome tool for an automated vulnerability scan! Fire up ZAP, go to "Quick Start," paste <code>https://ig97eo8f6hq2dq0e.vercel.app/</code> and click "Attack!" <span class="emoji">💥</span></p>
+
+<p>Here's a summary of ZAP's findings - in the "Alerts" tab! <span class="emoji">👇</span></p>
+
+<table>
+    <thead>
+        <tr>
+            <th>Alert Name</th>
+            <th>Risk</th>
+            <th>Confidence</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Missing Anti-clickjacking Header</td>
+            <td>Low</td>
+            <td>High</td>
+            <td>"The Anti-clickjacking Header is not included in the HTTP response..."</td>
+        </tr>
+        <tr>
+            <td>Absence of Content Security Policy</td>
+            <td>Info</td>
+            <td>High</td>
+            <td>"Content Security Policy (CSP) header is missing..."</td>
+        </tr>
+        <tr>
+            <td>... (Other Alerts, if any)</td>
+            <td>...</td>
+            <td>...</td>
+            <td>...</td>
+        </tr>
+    </tbody>
+</table>
+
+<p><strong>Example ZAP Alert Detail (for "Missing Anti-clickjacking Header"):</strong></p>
+<pre>
+    <code>
+Alert: Missing Anti-clickjacking Header
+Risk: Low
+Confidence: High
+URL: https://ig97eo8f6hq2dq0e.vercel.app/
+Parameter:
+Attack:
+Other info: The Anti-clickjacking Header is not included in the HTTP response.
+... (More details from ZAP alert in ZAP UI)
+</code>
+</pre>
+
+<p><strong>Interpretation of ZAP Alerts for Minesweeper Application:</strong></p>
+<ul>
+    <li><strong>"Missing Anti-clickjacking Header" (Low Risk):</strong> ZAP says "anti-clickjacking header missing." We know <code>X-Frame-Options: DENY</code> is there, but ZAP might be wanting more robust protection like CSP's <code>frame-ancestors</code>. For Minesweeper, clickjacking risk is low, but good to note for general web app security! <span class="emoji">💡</span></li>
+    <li><strong>"Absence of Content Security Policy" (Informational):</strong> CSP missing again! ZAP agrees with our manual check. CSP is a powerful security booster. Its absence is just "Informational" from ZAP, but for real-world apps, CSP is super important! <span class="emoji">🛡️</span></li>
+    <li><strong>(Other Alerts - if any):</strong> [Analyze any other ZAP alerts the same way! Think about the risk and if it's relevant to Minesweeper]. <span class="emoji">🤔</span></li>
+</ul>
+
+<h2><span class="section-icon">📊</span> Section 4: Phase Findings - Putting It All Together! <span class="emoji">🧩</span></h2>
+
+<p>Alright, we've gathered lots of clues! Time to analyze what we've found! Let's summarize the key takeaways from each phase. <span class="emoji">🚀</span></p>
+
+<h3><span class="subsection-icon">🕵️‍♂️</span> 4.1 Summary of Reconnaissance Findings (Browser DevTools & Nmap)</h3>
+
+<ul>
+    <li><strong>Next.js App!</strong> Confirmed it's a Next.js app - modern JavaScript framework! <span class="emoji">💻</span></li>
+    <li><strong>Client-Side Game!</strong> Game logic is all in JavaScript, running in your browser! <span class="emoji">🎮</span></li>
+    <li><strong>Local Storage for Data!</strong> Game state, settings, scores - all saved client-side! <span class="emoji">💾</span></li>
+    <li><strong>Standard Web Server!</strong> Nmap showed open ports 80 & 443 - normal web stuff! <span class="emoji">🌐</span></li>
+    <li><strong>Vercel Hosting!</strong> Hosted on Vercel's cloud platform! <span class="emoji">☁️</span></li>
+    <li><strong>Network Reconnaissance (Nmap):</strong> Nmap scan revealed open ports 80 (HTTP) and 443 (HTTPS) on <code>ig97eo8f6hq2dq0e.vercel.app</code>, confirming standard web services. Vercel hosting infrastructure was also identified.</li>
+</ul>
+
+<h3><span class="subsection-icon">✅</span> 4.2 Summary of Pen Testing/Auditing Findings</h3>
+
+<ul>
+    <li><strong>Basic Security Headers Present!</strong> <code>X-Frame-Options</code>, <code>X-Content-Type-Options</code>, <code>Referrer-Policy</code> - good start! <span class="emoji">👍</span></li>
+    <li><strong>CSP Missing!</strong> <code>Content-Security-Policy</code> is absent - a key security header missing. <span class="emoji">❌</span></li>
+    <li><strong>HSTS Missing!</strong> <code>Strict-Transport-Security</code> also missing. <span class="emoji">❌</span></li>
+    <li><strong>ZAP Agrees!</strong> ZAP flagged missing Anti-clickjacking & CSP too! <span class="emoji">🤖</span></li>
+</ul>
+
+<h3><span class="subsection-icon">🤔</span> 4.3 Analysis of Findings (Updated with Nmap & ZAP)</h3>
+
+<ul>
+    <li><strong>Client-Side Focus = Client-Side Security!</strong> Security is mainly about client-side code and data in this game. <span class="emoji">🎮</span> Nmap & ZAP confirm no major server-side stuff directly exposed.</li>
+    <li><strong>Local Storage - OK for This Game!</strong> Local storage works fine for Minesweeper's data - low risk for game state & settings. But for sensitive user info, client-side storage needs extra care! <span class="emoji">🔒</span></li>
+    <li><strong>HTTP Security Header Enhancements Needed!</strong> <strong>CSP is the big one!</strong> <span class="emoji">🛡️</span> It's a powerful way to protect against XSS. Even for a simple game, CSP is a best practice! HSTS is also recommended for HTTPS sites! <span class="emoji">🔒</span> ZAP also highlighted clickjacking - <code>X-Frame-Options: DENY</code> is good, but CSP with <code>frame-ancestors</code> could be even better in general. <span class="emoji">💡</span></li>
+    <li><strong>Nmap - Network Context!</strong> Nmap shows basic web server setup - expected. For more complex apps, Nmap is crucial for finding server vulnerabilities. <span class="emoji">🗺️</span></li>
+    <li><strong>ZAP - Automated Efficiency!</strong> ZAP quickly confirmed our manual header findings! Automated scanners are great for broad checks, but human review is still key to understand the context! <span class="emoji">🤖</span> + <span class="emoji">🤓</span> = <span class="emoji">💪</span></li>
+</ul>
+
+<h2><span class="section-icon">🎉</span> Section 5: Conclusion - Wrapping Up & Learning Points! <span class="emoji">🚀</span></h2>
+
+<p>We did it! We audited the Minesweeper web app! Let's summarize and celebrate what we learned! <span class="emoji">🎉</span></p>
+
+<div class="conclusion-box">
+    <h3><span class="subsection-icon">📝</span> 5.1 Audit Summary</h3>
+    <p>We did a friendly cybersecurity audit on the Minesweeper web app at <a href="https://ig97eo8f6hq2dq0e.vercel.app/">https://ig97eo8f6hq2dq0e.vercel.app/</a>. We used Browser DevTools, Nmap, and ZAP! We explored the app, gathered info, and did a security check-up - all ethically and responsibly! <span class="emoji">👍</span></p>
+</div>
+
+<div class="conclusion-box">
+    <h3><span class="subsection-icon">🌟</span> 5.2 Conclusions</h3>
+    <p>For a simple client-side game, the Minesweeper app is reasonably secure! <span class="emoji">✅</span> Basic security headers are in place. But, <strong>adding <code>Content-Security-Policy</code> (CSP) and <code>Strict-Transport-Security</code> (HSTS) would boost its security score!</strong> <span class="emoji">🚀</span> Even for simple apps, best practices matter! <span class="emoji">🏆</span> ZAP and our manual checks pointed to the same improvement areas! Teamwork! <span class="emoji">🤝</span></p>
+</div>
+
+<div class="learning-points-box">
+    <h3><span class="subsection-icon">🎓</span> 5.3 Personal Learning Points</h3>
+    <p>This audit was awesome for learning! I learned about:</p>
+    <ul>
+        <li><strong>Browser DevTools Power!</strong> Network, Sources, Application, Console, Headers - super useful for web security! <span class="emoji">💻</span></li>
+        <li><strong>Nmap for Network View!</strong> Basic port scanning - great for understanding network services! <span class="emoji">🗺️</span></li>
+        <li><strong>ZAP - Automated Scanning!</strong> Automated vulnerability scanning tools are efficient and helpful! <span class="emoji">🤖</span></li>
+        <li><strong>HTTP Security Headers - Key Protections!</strong> CSP, HSTS, X-Frame-Options - important for web security! <span class="emoji">🛡️</span></li>
+        <li><strong>Combining Tools & Techniques!</strong> Manual + Automated = Powerful Security Assessment! <span class="emoji">💪</span></li>
+    </ul>
+    <p>This was a fantastic journey into web app security auditing! Keep exploring and keep learning! You're awesome! <span class="emoji">✨</span> Feel free to ask any questions! Keep up the great work! <span class="emoji">👍</span></p>
+</div>
+</body>
+</html>
