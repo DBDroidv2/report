@@ -1,4 +1,4 @@
-\`\`\`markdown
+
 
 # 🎉 Cybersecurity Audit Report: Minesweeper Web App - Let's Explore & Learn\! 🚀
 
@@ -264,5 +264,3 @@ This audit was awesome for learning\! I learned about:
 
 This was a fantastic journey into web app security auditing\!  Keep exploring and keep learning\! You're awesome\! ✨  Feel free to ask any questions\!  Keep up the great work\! 👍
 
-```
-```
